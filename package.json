@@ -1,0 +1,22 @@
+{
+  "name": "@shoelace-style/rollup-example",
+  "version": "1.0.0",
+  "description": "A base setup that demonstrates how to import Shoelace components with Rollup.",
+  "dependencies": {},
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^14.0.0",
+    "@rollup/plugin-node-resolve": "^8.4.0",
+    "@stencil/core": "^1.17.0-0",
+    "rollup": "^2.22.2",
+    "rollup-copy-plugin": "^0.1.0",
+    "rollup-plugin-copy": "^3.3.0",
+    "rollup-plugin-postcss": "^3.1.3"
+  },
+  "scripts": {
+    "start": "rollup -c -w",
+    "build": "rollup -c",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
