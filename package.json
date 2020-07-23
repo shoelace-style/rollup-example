@@ -2,7 +2,9 @@
   "name": "@shoelace-style/rollup-example",
   "version": "1.0.0",
   "description": "A base setup that demonstrates how to import Shoelace components with Rollup.",
-  "dependencies": {},
+  "dependencies": {
+    "@shoelace-style/shoelace": "^2.0.0-beta.7"
+  },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^14.0.0",
     "@rollup/plugin-node-resolve": "^8.4.0",
