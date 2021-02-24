@@ -6,7 +6,7 @@ import resolve from '@rollup/plugin-node-resolve';
 
 export default {
   input: 'src/index.js',
-  output: [{ dir: path.resolve('dist/'), format: 'es' }],
+  output: [{ dir: path.resolve(__dirname, 'dist'), format: 'es' }],
   plugins: [
     resolve(),
     commonjs(),
@@ -16,8 +16,8 @@ export default {
     copy({
       targets: [
         {
-          src: path.resolve(__dirname, 'node_modules/@shoelace-style/shoelace/dist/shoelace/icons'),
-          dest: path.resolve(__dirname, 'dist')
+          src: path.resolve(__dirname, 'node_modules/@shoelace-style/shoelace/dist/assets'),
+          dest: path.resolve(__dirname)
         }
       ]
     })

@@ -1,8 +1,6 @@
 # Shoelace Rollup Example
 
-A base setup that demonstrates how to import Shoelace components with Rollup.
-
-THIS REPO IS A WORK IN PROGRESS!
+A minimal setup that demonstrates how to import Shoelace components with Rollup.
 
 For development:
 
@@ -16,7 +14,7 @@ For a production build:
 npm run build
 ```
 
-To start a local server for testing:
+To start a local server to verify everything works, build the project and run:
 
 ```sh
 npx http-server
