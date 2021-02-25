@@ -1,4 +1,4 @@
-import '@shoelace-style/shoelace/dist/shoelace.css';
+import '@shoelace-style/shoelace/dist/themes/base.css';
 import { setBasePath, SlButton, SlIcon, SlInput, SlRating } from '@shoelace-style/shoelace';
 
 // Set the pase path to the folder you copied Shoelace's assets to
