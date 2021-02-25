@@ -1,7 +1,7 @@
 import path from 'path';
 import commonjs from '@rollup/plugin-commonjs';
 import copy from 'rollup-plugin-copy';
-import postcss from 'rollup-plugin-postcss';
+import css from 'rollup-plugin-css-only'
 import resolve from '@rollup/plugin-node-resolve';
 
 export default {
@@ -10,14 +10,16 @@ export default {
   plugins: [
     resolve(),
     commonjs(),
-    postcss({
-      extensions: ['.css']
+    // Bundle styles into dist/bundle.css
+    css({
+      output: 'bundle.css' 
     }),
+    // Copy Shoelace assets to dist/shoelace
     copy({
       targets: [
         {
           src: path.resolve(__dirname, 'node_modules/@shoelace-style/shoelace/dist/assets'),
-          dest: path.resolve(__dirname)
+          dest: path.resolve(__dirname, 'dist/shoelace')
         }
       ]
     })
