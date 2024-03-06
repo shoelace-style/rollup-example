@@ -3,19 +3,19 @@
   "version": "1.0.0",
   "description": "A base setup that demonstrates how to import Shoelace components with Rollup.",
   "dependencies": {
-    "@shoelace-style/shoelace": "^2.0.0-beta.28"
+    "@shoelace-style/shoelace": "2.14.0"
   },
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^14.0.0",
-    "@rollup/plugin-node-resolve": "^8.4.0",
-    "@stencil/core": "^1.17.0-0",
-    "rollup": "^2.22.2",
-    "rollup-plugin-copy": "^3.3.0",
-    "rollup-plugin-css-only": "^3.1.0"
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@types/react": "^18.2.61",
+    "rollup": "^4.12.0",
+    "rollup-plugin-copy": "^3.5.0",
+    "rollup-plugin-css-only": "^4.5.2"
   },
   "scripts": {
-    "start": "rollup -c -w",
-    "build": "rollup -c",
+    "start": "rollup -c -w --bundleConfigAsCjs",
+    "build": "rollup -c --bundleConfigAsCjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
