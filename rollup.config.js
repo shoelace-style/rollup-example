@@ -1,28 +1,30 @@
 import path from 'path';
-import commonjs from '@rollup/plugin-commonjs';
+import resolve from 'rollup-plugin-node-resolve';
 import copy from 'rollup-plugin-copy';
-import css from 'rollup-plugin-css-only'
-import resolve from '@rollup/plugin-node-resolve';
+import css from 'rollup-plugin-css-only';
+import { terser } from 'rollup-plugin-terser';
 
 export default {
   input: 'src/index.js',
-  output: [{ dir: path.resolve(__dirname, 'dist'), format: 'es' }],
+  output: {
+    file: 'dist/bundle.js',
+    format: 'esm',
+  },
   plugins: [
     resolve(),
-    commonjs(),
-    // Bundle styles into dist/bundle.css
-    css({
-      output: 'bundle.css' 
-    }),
-    // Copy Shoelace assets to dist/shoelace
+    css({ output: 'bundle.css' }),
+    terser(),
     copy({
       copyOnce: true,
       targets: [
         {
-          src: path.resolve(__dirname, 'node_modules/@shoelace-style/shoelace/dist/assets'),
-          dest: path.resolve(__dirname, 'dist/shoelace')
-        }
-      ]
-    })
-  ]
+          src: path.resolve(
+            __dirname,
+            'node_modules/@shoelace-style/shoelace/dist/assets',
+          ),
+          dest: path.resolve(__dirname, 'dist/shoelace'),
+        },
+      ],
+    }),
+  ],
 };
